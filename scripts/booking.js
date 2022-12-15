@@ -11,8 +11,8 @@ let numDays = [0,0,0,0,0], theRate = 35;
     var thursday = document.getElementById("thursday");
     var friday = document.getElementById("friday");
 
-    var fullDay = document.getElementById("fullDay");
-    var halfDay = document.getElementById("halfDay");
+    var full = document.getElementById("full");
+    var half = document.getElementById("half");
     var calculatedCost = document.getElementById("calculated-cost");
     var clearBtn = document.getElementById("clear-button");
 
@@ -79,7 +79,7 @@ clearBtn.addEventListener("click", () => {
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
 
-halfDay.addEventListener("click", () => {
+half.addEventListener("click", () => {
     var daysSelected = 0, sumCost = 0;
     theRate = 20;
     for(let x=0; x<numDays.length; x++) {
@@ -89,13 +89,13 @@ halfDay.addEventListener("click", () => {
     }
     sumCost = daysSelected * theRate;
     calculatedCost.innerHTML = sumCost;
-    halfDay.classList.add("clicked");
-    fullDay.classList.remove("clicked");
+    half.classList.add("clicked");
+    full.classList.remove("clicked");
 })
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 
-fullDay.addEventListener("click", () => {
+full.addEventListener("click", () => {
     var daysSelected = 0, sumCost = 0;
     theRate = 35;
     for(let x=0; x<numDays.length; x++) {
@@ -105,8 +105,8 @@ fullDay.addEventListener("click", () => {
     }
     sumCost = daysSelected * theRate;
     calculatedCost.innerHTML = sumCost;
-    fullDay.classList.add("clicked");
-    halfDay.classList.remove("clicked");
+    full.classList.add("clicked");
+    half.classList.remove("clicked");
 })
 
 /********* calculate *********/
