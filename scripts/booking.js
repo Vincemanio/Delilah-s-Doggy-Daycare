@@ -64,8 +64,8 @@ friday.addEventListener("click", () => {
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 
 clearBtn.addEventListener("click", () => {
-            for(var i=0; i<numDays.length; i++) {
-                numDays[i] = 0;
+            for(var x=0; x<numDays.length; x++) {
+                numDays[x] = 0;
             }
             calculatedCost.innerHTML = 0;
             monday.classList.remove("clicked");
@@ -78,10 +78,10 @@ clearBtn.addEventListener("click", () => {
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
+
 halfDay.addEventListener("click", () => {
     var daysSelected = 0, sumCost = 0;
     theRate = 20;
-
     for(let x=0; x<numDays.length; x++) {
         if(numDays[x] != 0) {
             daysSelected += 1;
